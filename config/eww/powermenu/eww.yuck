@@ -17,7 +17,7 @@
          :spacing -40
 
       (label :class "hey-label"
-             :text "Hey")
+             :text "嗨")
 
       (label :class "name-label"
              :text "Keytaro!")

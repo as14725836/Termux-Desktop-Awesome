@@ -70,7 +70,7 @@
           (box :style "background-image: url('${music_cover}'); background-size: cover; min-width: 55px; min-height: 55px; border-radius: 8px;")
           (box :orientation "v" :valign "center"
             (label :text music_title :halign "start" :style "font-size: 13px; color: #c0caf5; font-weight: bold;" :limit-width 12)
-            (label :text "By ${music_artist}" :halign "start" :style "font-size: 11px; color: #565f89;")))
+            (label :text "— ${music_artist}" :halign "start" :style "font-size: 11px; color: #565f89;")))
         (box :orientation "h" :spacing 20 :halign "center" :style "padding: 8px;"
           (button :onclick "audtool playlist-reverse" :style "color: #c0caf5; font-size: 14px;" "󰒮")
           (button :onclick "audtool playback-playpause" :style "color: #c0caf5; font-size: 18px;" "󰏤")

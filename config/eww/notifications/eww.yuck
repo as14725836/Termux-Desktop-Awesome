@@ -24,7 +24,7 @@
 
     ;; QUALIFICATION
     (label
-      :text "Notifications"
+      :text "通知"
       :valign "start"
       :halign "center"
       :style "color: #c0caf5;

@@ -50,20 +50,20 @@
     :class "menu"
     :space-evenly false
 
-    (label :class "menu-header" :text "Search" :halign "start")
+    (label :class "menu-header" :text "搜索" :halign "start")
 
     (box :class "separator")
 
     (menu-item
       :icon "󰈹"
       :icon-class "icon-browser"
-      :text "Web Browser"
+      :text "浏览器"
       :cmd "firefox &")
 
     (menu-item
       :icon "󰉋"
       :icon-class "icon-folder"
-      :text "File Manager"
+      :text "文件管理器"
       :cmd "thunar &")
 
     (box :class "separator")
@@ -71,13 +71,13 @@
     (menu-item
       :icon ""
       :icon-class "icon-term"
-      :text "Launch Terminal"
+      :text "打开终端"
       :cmd "xfce4-terminal --hide-menubar &")
 
     (menu-item-arrow
       :icon ""
       :icon-class "icon-fav"
-      :text "Favorites"
+      :text "收藏夹"
       :cmd "rofi -show drun")
 
     (box :class "separator")
@@ -91,5 +91,5 @@
     (menu-item-arrow
       :icon "⏻"
       :icon-class "icon-exit"
-      :text "Exit"
+      :text "退出"
       :cmd "pkill -9 awesome && pkill -9 termux-x11")))

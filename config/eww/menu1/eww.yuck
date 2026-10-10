@@ -48,24 +48,24 @@
     :class "menu"
 
     (menu-item
-      :text "Terminal"
+      :text "终端"
       :cmd "xfce4-terminal --hide-menubar &")
 
     (menu-item
-      :text "Explorer"
+      :text "文件浏览"
       :cmd "thunar &")
 
     (menu-item
-      :text "Browser"
+      :text "浏览器"
       :cmd "firefox &")
 
     (menu-item
-      :text "Editor   "
+      :text "编辑器"
       :cmd "kitty -e nvim &")
 
     (menu-item
       :halign "start"
-      :text "GUI Edit"
+      :text "图形编辑"
       :cmd "mousepad &")
 
     (awesome-item)))

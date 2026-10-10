@@ -120,7 +120,7 @@
 
       ;; Toggles Card (Actions)
       (box :style "background-color: #090E20; border-radius: 16px; padding: 15px;" :orientation "v" :spacing 10 :space-evenly false
-        (label :text "Actions" :halign "start" :style "color: #565f89; font-size: 12px; font-weight: bold; margin-bottom: 5px;")
+        (label :text "操作" :halign "start" :style "color: #565f89; font-size: 12px; font-weight: bold; margin-bottom: 5px;")
 
         ;; First Row (WiFi, Vol Mute, 飞行模式, Extra Brightness)
         (box :orientation "h" :spacing 10 :space-evenly true
