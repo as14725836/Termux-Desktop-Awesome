@@ -61,7 +61,7 @@
             (box :style "background-image: url('../assets/3.png'); background-size: cover; min-width: 65px; min-height: 65px; border-radius: 50%; margin-right: 15px;")
             (box :orientation "v" :valign "center"
               (label :text "Keytaro" :halign "start" :style "font-size: 16px; color: #c0caf5; font-weight: bold;")
-              (label :text "up 2 hours, 7 minutes" :halign "start" :style "font-size: 13px; color: #c0caf5; margin-top: 4px;")))
+              (label :text "已运行 2 小时 7 分钟" :halign "start" :style "font-size: 13px; color: #c0caf5; margin-top: 4px;")))
           (box :orientation "h" :hexpand true :style "padding: 12px 15px 15px 15px;"
             (button :onclick "~/.config/eww/scripts/poweroff.sh logout"
                     :style "background-color: #090E20; border-radius: 10px; min-width: 36px; min-height: 36px; color: #090E20; font-size: 16px;" :halign "start" "󰐥")

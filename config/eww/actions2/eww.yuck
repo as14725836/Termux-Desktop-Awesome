@@ -3,8 +3,8 @@
 ;; ==========================================
 (defpoll lithour :interval "1s" "date +'%H'")
 (defpoll litmin :interval "1s" "date +'%M'")
-(defpoll shortday :interval "1h" "date +'%d %b %y'")
-(defpoll weekday :interval "1h" "date +'%A'")
+(defpoll shortday :interval "1h" "bash /data/data/com.termux/files/home/.config/eww/scripts/datetime_zh.sh shortdate")
+(defpoll weekday :interval "1h" "bash /data/data/com.termux/files/home/.config/eww/scripts/datetime_zh.sh weekday")
 (defvar pfp "/data/data/com.termux/files/home/.config/eww/assets/3.png")
 
 ;; Sliders 

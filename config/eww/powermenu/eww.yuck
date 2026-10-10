@@ -24,7 +24,7 @@
     )
 
     (label :class "sub-label"
-           :text "What do you want to do?")
+           :text "你想做什么？")
 
     (box :class "buttons-box"
          :orientation "h"
