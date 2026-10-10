@@ -14,8 +14,8 @@
 (defpoll state_vol   :interval "2s" "~/.config/eww/scripts/buttons.sh vol status")
 (defpoll state_bt   :interval "1s" "~/.config/eww/scripts/buttons.sh bt status")
 (defpoll state_bri   :interval "2s" "~/.config/eww/scripts/buttons.sh bri status")
-(defpoll music_title :interval "2s" "audtool current-song-tuple-data title || echo 'Not Playing'")
-(defpoll music_artist :interval "2s" "audtool current-song-tuple-data artist || echo 'Unknown'")
+(defpoll music_title :interval "2s" "audtool current-song-tuple-data title || echo '未在播放'")
+(defpoll music_artist :interval "2s" "audtool current-song-tuple-data artist || echo '未知'")
 (defpoll music_cover :interval "2s" "~/.config/eww/scripts/cover.sh")
 
 ;; --- 2. MAIN WINDOW ---
@@ -40,7 +40,7 @@
                      min-height: 24px; 
                      border-radius: 50%;")
         
-        (label :text "Hello Keytaro" :style "color: #c0caf5; font-size: 13px; font-weight: bold; :valign 'center'"))
+        (label :text "你好 Keytaro" :style "color: #c0caf5; font-size: 13px; font-weight: bold; :valign 'center'"))
       (box :style "background-color: #090E20; border-radius: 10px; padding: 5px 12px; margin-left: 30px;" :hexpand true
            (label :text "󰍉  Search Apps" :halign "start" :style "color: #565f89; font-size: 12px;")))
 
@@ -58,7 +58,7 @@
     (box :orientation "h" :spacing 12 :space-evenly true
       ;; Sliders (More compact)
       (box :style "background-color: #090E20; border-radius: 15px; padding: 12px;" :orientation "v" :spacing 10 :space-evenly false
-        (label :text "Controls" :halign "start" :style "color: #565f89; font-size: 12px; font-weight: bold;")
+        (label :text "控制" :halign "start" :style "color: #565f89; font-size: 12px; font-weight: bold;")
         (overlay (scale :class "s-blue" :value {sys_vol ?: 0} :min 0 :max 101 :onchange "~/.config/eww/scripts/volume.sh {}")
                  (label :halign "start" :text "󰕾" :style "color: #020612; font-size: 16px; margin-left: 10px;"))
         (overlay (scale :class "s-blue" :value {sys_bright ?: 0} :min 0 :max 101 :onchange "~/.config/eww/scripts/brightness.sh {}")

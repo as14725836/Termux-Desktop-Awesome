@@ -20,8 +20,8 @@
 (defpoll state_mic  :interval "1s" "~/.config/eww/scripts/buttons.sh mic status")
 
 ;; --- MUSIC POLLERS ---
-(defpoll music_title :interval "2s" "audtool current-song-tuple-data title || echo 'Not Playing'")
-(defpoll music_artist :interval "2s" "audtool current-song-tuple-data artist || echo 'Unknown'")
+(defpoll music_title :interval "2s" "audtool current-song-tuple-data title || echo '未在播放'")
+(defpoll music_artist :interval "2s" "audtool current-song-tuple-data artist || echo '未知'")
 (defpoll music_cover :interval "2s" "~/.config/eww/scripts/cover.sh")
 (defpoll music_status :interval "1s" "audtool playback-status")
 
@@ -83,13 +83,13 @@
         (sysblock :icon "${state_bt == 'on' ? '󰂯' : '󰂲'}"
                   :onclick "~/.config/eww/scripts/buttons.sh bt toggle"
                   :active "${state_bt == 'on' ? true : false}"
-                  :label "Bluetooth")
+                  :label "蓝牙")
       )
       (box :halign "end" :orientation "h" :space-evenly true
         (sysblock :icon "${state_air == 'on' ? '󰀝' : '󰀞'}"
                   :onclick "~/.config/eww/scripts/buttons.sh air toggle"
                   :active "${state_air == 'on' ? true : false}"
-                  :label "Airplane")
+                  :label "飞行模式")
       )
     )
     (box :class "lastrow"
@@ -99,19 +99,19 @@
         (sysblock :icon "${state_bri == 'on' ? '󰃠' : '󰃟'}"
                   :onclick "~/.config/eww/scripts/buttons.sh bri toggle"
                   :active "${state_bri == 'on' ? true : false}"
-                  :label "Night Light")
+                  :label "夜间模式")
       )
       (box :halign "center" :orientation "h" :space-evenly true
         (sysblock :icon "${state_vol == 'on' ? '󰕾' : '󰖁'}"
                   :onclick "~/.config/eww/scripts/buttons.sh vol toggle"
                   :active "${state_vol == 'on' ? true : false}"
-                  :label "Volume")
+                  :label "音量")
       )
       (box :halign "end" :orientation "h" :space-evenly true
         (sysblock :icon "${state_mic == 'on' ? '󰍬' : '󰍭'}"
                   :onclick "~/.config/eww/scripts/buttons.sh mic toggle"
                   :active "${state_mic == 'on' ? true : false}"
-                  :label "Micro")
+                  :label "麦克风")
       )
     )
   )
@@ -179,8 +179,8 @@
          :space-evenly false
          :hexpand true
          :style "background-image: linear-gradient(to right, rgba(9, 14, 32, 0.95) 0%, rgba(9, 14, 32, 0.4) 60%, rgba(9, 14, 32, 0.0) 100%), url('${music_cover}'); background-size: cover; background-position: center; border-radius: 12px 0px 0px 12px; padding: 20px 15px;"
-      (label :text {music_title != "" ? music_title : "Not Playing"} :halign "start" :style "font-family: 'Product Sans'; font-size: 18px; color: #c0caf5; font-weight: bold;")
-      (label :text {music_artist != "" ? music_artist : "Unknown"} :halign "start" :style "font-family: 'Product Sans'; font-size: 14px; color: #a9b1d6; margin-top: 5px;")
+      (label :text {music_title != "" ? music_title : "未在播放"} :halign "start" :style "font-family: 'Product Sans'; font-size: 18px; color: #c0caf5; font-weight: bold;")
+      (label :text {music_artist != "" ? music_artist : "未知"} :halign "start" :style "font-family: 'Product Sans'; font-size: 14px; color: #a9b1d6; margin-top: 5px;")
     )
     (box :orientation "v"
          :space-evenly true

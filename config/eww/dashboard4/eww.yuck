@@ -17,8 +17,8 @@
 (defpoll state_sync :interval "1s" "~/.config/eww/scripts/buttons.sh sync status")
 
 ;; --- MUSIC POLLERS ---
-(defpoll music_title :interval "2s" "audtool current-song-tuple-data title || echo 'Not Playing'")
-(defpoll music_artist :interval "2s" "audtool current-song-tuple-data artist || echo 'Unknown'")
+(defpoll music_title :interval "2s" "audtool current-song-tuple-data title || echo '未在播放'")
+(defpoll music_artist :interval "2s" "audtool current-song-tuple-data artist || echo '未知'")
 (defpoll music_cover :interval "2s" "~/.config/eww/scripts/cover.sh")
 
 ;; --- DATE POLLERS ---
@@ -45,7 +45,7 @@
     (box :style "background-color: #090E20; border-radius: 16px; padding: 20px;" :orientation "h" :space-evenly false
         (box :style "background-image: url('../assets/pfp.png'); background-size: cover; min-width: 90px; min-height: 90px; border-radius: 50%; margin-right: 15px;")
         (box :orientation "v" :valign "center"
-          (label :text "Welcome Keytaro" :halign "start" :style "font-size: 16px; color: #c0caf5; font-weight: bold;")
+          (label :text "欢迎 Keytaro" :halign "start" :style "font-size: 16px; color: #c0caf5; font-weight: bold;")
           (label :text "@samsung" :halign "start" :style "font-size: 13px; color: #7aa2f7; margin-top: 4px;")
           (label :text "-up 7 minutes" :halign "start" :style "font-size: 13px; color: #c0caf5; margin-top: 4px;")))
 
@@ -55,8 +55,8 @@
 
   ;; Text container and controls
         (box :orientation "v" :valign "center" :hexpand true :space-evenly false :spacing 5
-          (label :text {music_title != "" ? music_title : "Not Playing"} :halign "center" :style "font-size: 14px; color: #c0caf5; font-weight: bold;" :limit-width 18)
-          (label :text {music_artist != "" ? music_artist : "Unknown"} :halign "center" :style "font-size: 12px; color: #565f89;" :limit-width 20)
+          (label :text {music_title != "" ? music_title : "未在播放"} :halign "center" :style "font-size: 14px; color: #c0caf5; font-weight: bold;" :limit-width 18)
+          (label :text {music_artist != "" ? music_artist : "未知"} :halign "center" :style "font-size: 12px; color: #565f89;" :limit-width 20)
           
           ;; Centered controls
           (box :orientation "h" :spacing 15 :halign "center" :style "margin-top: 8px;"
@@ -66,7 +66,7 @@
 
     ;; --- CONTROL CARD ---
     (box :style "background-color: #090E20; border-radius: 16px; padding: 15px;" :orientation "v" :spacing 30 :space-evenly false
-      (label :text "Controls" :halign "start" :style "color: #565f89; font-size: 12px; font-weight: bold; margin-bottom: 5px;")
+      (label :text "控制" :halign "start" :style "color: #565f89; font-size: 12px; font-weight: bold; margin-bottom: 5px;")
       (box :orientation "h" :spacing 15 :space-evenly false (label :text "󰋊" :style "color: #c0caf5; font-size: 18px;") (scale :class "s-red" :hexpand true :value {sys_storage ?: 50} :min 0 :max 101))
       (box :orientation "h" :spacing 15 :space-evenly false (label :text "󰕾" :style "color: #c0caf5; font-size: 18px;") (scale :class "s-blue" :hexpand true :value {sys_vol ?: 0} :min 0 :max 101 :onchange "~/.config/eww/scripts/volume.sh {}"))
       (box :orientation "h" :spacing 15 :space-evenly false (label :text "󰒓" :style "color: #c0caf5; font-size: 18px;") (scale :class "s-yellow" :hexpand true :value {sys_bright ?: 50} :min 0 :max 101 :onchange "~/.config/eww/scripts/brightness.sh {}")))

@@ -22,7 +22,7 @@ case "$ACTION" in
         ;;
 
     *)
-        echo "Correct use: $0 {logout|reboot|poweroff}"
+        echo "用法: $0 {logout|reboot|poweroff}"
         exit 1
         ;;
 esac

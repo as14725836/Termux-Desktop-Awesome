@@ -18,8 +18,8 @@
 (defpoll state_sync :interval "1s" "~/.config/eww/scripts/buttons.sh sync status")
 
 ;; --- MUSIC POLLERS ---
-(defpoll music_title :interval "2s" "audtool current-song-tuple-data title || echo 'Not Playing'")
-(defpoll music_artist :interval "2s" "audtool current-song-tuple-data artist || echo 'Unknown'")
+(defpoll music_title :interval "2s" "audtool current-song-tuple-data title || echo '未在播放'")
+(defpoll music_artist :interval "2s" "audtool current-song-tuple-data artist || echo '未知'")
 (defpoll music_cover :interval "2s" "~/.config/eww/scripts/cover.sh")
 
 ;; --- 2. MAIN WINDOW ---
@@ -87,7 +87,7 @@
           )
         )
 
-        ;; 3. Sliders (Volume, Brightness, Microphone)
+        ;; 3. Sliders (音量, Brightness, 麦克风phone)
         (box :style "background-color: #090E20; border-radius: 16px; padding: 15px;" :orientation "v" :spacing 15 :space-evenly false :vexpand true :valign "center"
           (overlay :hexpand true
             (scale :class "s-blue" :value {sys_vol ?: 0} :min 0 :max 101 :onchange "~/.config/eww/scripts/volumen.sh {}")
@@ -109,8 +109,8 @@
           (box :style "background-color: #090E20; border-radius: 16px 16px 12px 12px; padding: 20px 15px 30px 15px;" :orientation "h" :space-evenly false :hexpand true
             (box :style "background-image: url('${music_cover}'); background-size: cover; min-width: 65px; min-height: 65px; border-radius: 12px; margin-right: 15px;")
             (box :orientation "v" :valign "center"
-              (label :text {music_title != "" ? music_title : "Not Playing"} :halign "start" :style "font-size: 16px; color: #c0caf5; font-weight: bold;" :limit-width 15)
-              (label :text {music_artist != "" ? music_artist : "Unknown Artist"} :halign "start" :style "font-size: 13px; color: #c0caf5; margin-top: 4px;" :limit-width 18)))
+              (label :text {music_title != "" ? music_title : "未在播放"} :halign "start" :style "font-size: 16px; color: #c0caf5; font-weight: bold;" :limit-width 15)
+              (label :text {music_artist != "" ? music_artist : "未知艺术家"} :halign "start" :style "font-size: 13px; color: #c0caf5; margin-top: 4px;" :limit-width 18)))
           (box :orientation "h" :spacing 25 :halign "center" :style "padding: 12px 15px 15px 15px;"
             (button :onclick "audtool playlist-reverse" :style "color: #c0caf5; font-size: 16px;" "󰒮")
             (button :onclick "audtool playback-playpause" :style "color: #c0caf5; font-size: 20px;" "󰏤")

@@ -14,13 +14,13 @@ def run(cmd):
 
 def main():
     run("clear")
-    print(f"{Colors.PINK}=== Termux-Desktop-Awesome Installer ==={Colors.RESET}")
-    print(f"{Colors.BLUE}[+] Preparing the environment...... {Colors.RESET}")
+    print(f"{Colors.PINK}=== Termux-Desktop-Awesome 安装程序 ==={Colors.RESET}")
+    print(f"{Colors.BLUE}[+] 正在准备环境...... {Colors.RESET}")
     sleep(1)
 
     # 1. Installation of Dependencies
     apps = " audacious cava eww rofi awesome thunar picom neofetch feh starship kitty lsd w3m"
-    print(f"{Colors.BLUE}[+] Installing necessary packages...{Colors.RESET}")
+    print(f"{Colors.BLUE}[+] 正在安装所需软件包...{Colors.RESET}")
     run("pkg install x11-repo python python-pip git wget curl termux-x11-nightly pulseaudio firefox tur-repo zsh kitty termux-api virglrenderer-android fontconfig-utils freetype xfce4 jq lxappearance neovim-nightly rust chafa flameshot pygobject xorg-xsetroot -y")
     run(f"pkg install {apps} -y")
     run("pip install pyxdg pywal")
@@ -84,7 +84,7 @@ def main():
         run("termux-reload-settings")
 
     # 7. Shell Configurations (Cargo PATH and Starship)
-    print(f"{Colors.BLUE}[+] Setting up Shell environment...{Colors.RESET}")
+    print(f"{Colors.BLUE}[+] 正在配置 Shell 环境...{Colors.RESET}")
 
     cargo_export = 'export PATH=$PATH:$HOME/.cargo/bin'
 
@@ -121,5 +121,5 @@ if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        print(f"\n{Colors.PINK}[!] Installation cancelled {Colors.RESET}")
+        print(f"\n{Colors.PINK}[!] 安装已取消 {Colors.RESET}")
         sys.exit(0)

@@ -17,8 +17,8 @@
 (defpoll state_sync :interval "1s" "~/.config/eww/scripts/buttons.sh sync status")
 
 ;; --- MUSIC POLLERS ---
-(defpoll music_title :interval "2s" "audtool current-song-tuple-data title || echo 'Not Playing'")
-(defpoll music_artist :interval "2s" "audtool current-song-tuple-data artist || echo 'Unknown'")
+(defpoll music_title :interval "2s" "audtool current-song-tuple-data title || echo '未在播放'")
+(defpoll music_artist :interval "2s" "audtool current-song-tuple-data artist || echo '未知'")
 (defpoll music_cover :interval "2s" "~/.config/eww/scripts/cover.sh")
 (defpoll music_status :interval "1s" "audtool playback-status") 
 
@@ -45,10 +45,10 @@
     ;; Everything is now inside a dark gray background card
     (box :orientation "h" :space-evenly false :hexpand true :style "background-color: #111827; border-radius: 16px; padding: 12px 15px; margin-bottom: 5px;" :vexpand false :valign "center"
       (box :style "background-image: url('../assets/pfp1.png'); background-size: cover; min-width: 24px; min-height: 24px; border-radius: 50%; margin-right: 10px;")
-      (label :text "Hello Keytaro" :style "color: #c0caf5; font-size: 14px; font-weight: normal; margin-right: 15px;")
+      (label :text "你好 Keytaro" :style "color: #c0caf5; font-size: 14px; font-weight: normal; margin-right: 15px;")
       ;; The pill-shaped search bar with a dark color to contrast inside the gray card
       (box :style "background-color: #090E20; border-radius: 20px; padding: 8px 15px;" :hexpand true
-           (label :text "󰍉  Search..." :halign "start" :style "color: #565f89; font-size: 13px;")))
+           (label :text "󰍉  搜索..." :halign "start" :style "color: #565f89; font-size: 13px;")))
 
     ;; --- ROW 1: WELCOME AND PLAYER ---
     (box :orientation "h" :spacing 15 :space-evenly true :hexpand true :vexpand false
@@ -58,15 +58,15 @@
         (box :style "background-color: #090E20; border-radius: 16px 16px 12px 12px; padding: 20px 15px 30px 15px;" :orientation "h" :space-evenly false :hexpand true
           (box :style "background-image: url('../assets/pfp.png'); background-size: cover; min-width: 65px; min-height: 65px; border-radius: 50%; margin-right: 15px;")
           (box :orientation "v" :valign "center"
-            (label :text "Welcome Keytaro" :halign "start" :style "font-size: 16px; color: #c0caf5; font-weight: bold;")
-            (label :text "up 46 minutes" :halign "start" :style "font-size: 13px; color: #c0caf5;; margin-top: 4px;")))
+            (label :text "欢迎 Keytaro" :halign "start" :style "font-size: 16px; color: #c0caf5; font-weight: bold;")
+            (label :text "已运行 46 分钟" :halign "start" :style "font-size: 13px; color: #c0caf5;; margin-top: 4px;")))
         (box :orientation "h" :hexpand true :style "padding: 12px 15px 15px 15px;"
           ;; Blue Button (Left)
           (button :onclick "~/.config/eww/scripts/poweroff.sh logout"
                   :style "background-color: #292e42; border-radius: 10px; min-width: 36px; min-height: 36px; color: #7aa2f7; font-size: 16px;" :halign "start" "󰐥")
 
           (box :orientation "h" :spacing 10 :halign "end" :hexpand true
-            ;; Purple Button (Center - Reboot)
+            ;; Purple Button (Center - 重启)
             (button :onclick "~/.config/eww/scripts/poweroff.sh reboot"
                     :style "background-color: #292e42; border-radius: 10px; min-width: 36px; min-height: 36px; color: #bb9af7; font-size: 16px;" "󰑓")
 
@@ -82,10 +82,10 @@
           (box :style "background-image: url('${music_cover}'); background-size: cover; min-width: 65px; min-height: 65px; border-radius: 12px; margin-right: 15px;")
           (box :orientation "v" :valign "center"
             ;; Using Title and Artist variables
-            (label :text {music_title != "" ? music_title : "Not Playing"} :halign "start" :style "font-size: 16px; color: #c0caf5;  font-weight: bold;" :limit-width 15)
-            (label :text {music_artist != "" ? music_artist : "Unknown Artist"} :halign "start" :style "font-size: 13px; color: #c0caf5; margin-top: 4px;" :limit-width 18)))
+            (label :text {music_title != "" ? music_title : "未在播放"} :halign "start" :style "font-size: 16px; color: #c0caf5;  font-weight: bold;" :limit-width 15)
+            (label :text {music_artist != "" ? music_artist : "未知艺术家"} :halign "start" :style "font-size: 13px; color: #c0caf5; margin-top: 4px;" :limit-width 18)))
 
-        ;; Functional Music Controls
+        ;; Functional Music 控制
         (box :orientation "h" :spacing 25 :halign "center" :style "padding: 12px 15px 15px 15px;"
           ;; Previous Button
           (button :onclick "audtool playlist-reverse"
@@ -106,9 +106,9 @@
 
       ;; Sliders Card
       (box :style "background-color: #090E20; border-radius: 16px; padding: 15px;" :orientation "v" :spacing 15 :space-evenly false :valign "center" :vexpand true
-        (label :text "Controls" :halign "start" :style "color: #565f89; font-size: 12px; font-weight: bold; margin-bottom: 5px;")
+        (label :text "控制" :halign "start" :style "color: #565f89; font-size: 12px; font-weight: bold; margin-bottom: 5px;")
 
-        ;; Volume Slider
+        ;; 音量 Slider
         (overlay :hexpand true
           (scale :class "s-blue" :value {sys_vol ?: 0} :min 0 :max 101 :onchange "~/.config/eww/scripts/volume.sh {}")
           (label :halign "start" :text "󰕾" :style "color: #020612; font-size: 20px; margin-left: 15px;"))
@@ -122,7 +122,7 @@
       (box :style "background-color: #090E20; border-radius: 16px; padding: 15px;" :orientation "v" :spacing 10 :space-evenly false
         (label :text "Actions" :halign "start" :style "color: #565f89; font-size: 12px; font-weight: bold; margin-bottom: 5px;")
 
-        ;; First Row (WiFi, Vol Mute, Airplane, Extra Brightness)
+        ;; First Row (WiFi, Vol Mute, 飞行模式, Extra Brightness)
         (box :orientation "h" :spacing 10 :space-evenly true
           (button :halign "center" :valign "center"
                   :onclick "~/.config/eww/scripts/buttons.sh wifi toggle"
@@ -144,7 +144,7 @@
                   :style "background-color: ${state_bri == 'on' ? '#7aa2f7' : '#111827'}; color: ${state_bri == 'on' ? '#020612' : '#a9b1d6'}; border-radius: 50%; min-width: 44px; min-height: 44px; font-size: 20px;"
                   "${state_bri == 'on' ? '󰃠' : '󰃟'}"))
 
-        ;; Second Row (Bluetooth, Mic Mute, Crop, Sync)
+        ;; Second Row (蓝牙, Mic Mute, Crop, Sync)
         (box :orientation "h" :spacing 10 :space-evenly true
           (button :halign "center" :valign "center"
                   :onclick "~/.config/eww/scripts/buttons.sh bt toggle"

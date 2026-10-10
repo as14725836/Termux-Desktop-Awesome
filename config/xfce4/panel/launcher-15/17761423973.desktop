@@ -11,5 +11,7 @@ OnlyShowIn=XFCE;
 X-XFCE-MimeType=x-scheme-handler/http;x-scheme-handler/https;
 X-AppStream-Ignore=True
 Name=Web Browser
+Name[zh_CN]=浏览器
 Comment=Browse the web
+Comment[zh_CN]=浏览网页
 X-XFCE-Source=file:///data/data/com.termux/files/usr/share/applications/xfce4-web-browser.desktop

@@ -77,13 +77,13 @@
         (sysblock :icon "${state_bt == 'on' ? '󰂯' : '󰂲'}"
                   :onclick "~/.config/eww/scripts/buttons.sh bt toggle"
                   :active "${state_bt == 'on' ? true : false}"
-                  :label "Bluetooth")
+                  :label "蓝牙")
       )
       (box :halign "end" :orientation "h" :space-evenly true
         (sysblock :icon "${state_air == 'on' ? '󰀝' : '󰀞'}"
                   :onclick "~/.config/eww/scripts/buttons.sh air toggle"
                   :active "${state_air == 'on' ? true : false}"
-                  :label "Airplane")
+                  :label "飞行模式")
       )
     )
     (box :class "lastrow"
@@ -93,19 +93,19 @@
         (sysblock :icon "${state_bri == 'on' ? '󰃠' : '󰃟'}"
                   :onclick "~/.config/eww/scripts/buttons.sh bri toggle"
                   :active "${state_bri == 'on' ? true : false}"
-                  :label "Night Light")
+                  :label "夜间模式")
       )
       (box :halign "center" :orientation "h" :space-evenly true
         (sysblock :icon "${state_vol == 'on' ? '󰕾' : '󰖁'}"
                   :onclick "~/.config/eww/scripts/buttons.sh vol toggle"
                   :active "${state_vol == 'on' ? true : false}"
-                  :label "Volume")
+                  :label "音量")
       )
       (box :halign "end" :orientation "h" :space-evenly true
         (sysblock :icon "${state_mic == 'on' ? '󰍬' : '󰍭'}"
                   :onclick "~/.config/eww/scripts/buttons.sh mic toggle"
                   :active "${state_mic == 'on' ? true : false}"
-                  :label "Micro")
+                  :label "麦克风")
       )
     )
   )
@@ -181,19 +181,19 @@
            :spacing 10
         (button :class "do-poweroff"
                 :onclick "~/.config/eww/scripts/poweroff.sh poweroff"
-                :tooltip "Shutdown Termux X11"
+                :tooltip "关闭 Termux X11"
                 :halign "start"
           "襤"
         )
         (button :class "do-reboot"
                 :onclick "~/.config/eww/scripts/poweroff.sh reboot"
-                :tooltip "Reboot"
+                :tooltip "重启"
                 :halign "center"
           "勒"
         )
         (button :class "do-logout"
                 :onclick "~/.config/eww/scripts/poweroff.sh logout"
-                :tooltip "Logout AwesomeWM"
+                :tooltip "退出 AwesomeWM"
                 :halign "end"
           ""
         )

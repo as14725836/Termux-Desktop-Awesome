@@ -137,28 +137,28 @@ globalkeys = gears.table.join(
     awful.key({ "Control" }, "z", function ()
         awful.spawn.with_shell("~/.config/eww/scripts/toggle_profile.sh forward")
     end,
-    {description = "Toggle Eww profiles (Forward)", group = "custom"}),
+    {description = "切换 Eww 配置档（下一个）", group = "custom"}),
 
     -- Go back Eww profiles (Ctrl + X)
     awful.key({ "Control" }, "x", function ()
         awful.spawn.with_shell("~/.config/eww/scripts/toggle_profile.sh back")
     end,
-    {description = "Go back Eww profiles (Back)", group = "custom"}),
+    {description = "返回上一个 Eww 配置档", group = "custom"}),
 
     -- Python script (Ctrl + K)
     awful.key({ "Control" }, "k", function ()
         awful.spawn.with_shell("python ~/.config/eww/scripts/selector_gtk.py")
     end,
-    {description = "Toggle selector_gtk.py (Open/Close)", group = "custom"}),
+    {description = "切换 selector_gtk.py（打开/关闭）", group = "custom"}),
 
     -- Close Python script (Ctrl + N)
     awful.key({ "Control" }, "n", function ()
         awful.spawn.with_shell("pkill -f selector_gtk.py")
     end,
-    {description = "Close GTK selector", group = "launcher"}),
+    {description = "关闭 GTK 选择器", group = "launcher"}),
 
 
-    -- Controls
+    -- 控制
     awful.key({ "Control" }, "v", function ()
         mouse_mode_enabled = not mouse_mode_enabled
         naughty.notify({ app_name = "🖱️ Mouse Mode", text = (mouse_mode_enabled and "ENABLED" or "DISABLED") })
